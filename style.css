@@ -1,0 +1,41 @@
+:root { --ink:#f3f0e8; --muted:#aaa99f; --bg:#121413; --panel:#1a1d1a; --line:#343935; --orange:#ff7043; --green:#b9d66b; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:"Space Grotesk", sans-serif; }
+body:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.08; background-image:radial-gradient(#fff 0.6px,transparent .6px); background-size:5px 5px; mask-image:linear-gradient(to bottom,black,transparent 70%); }
+.shell { max-width:1180px; margin:auto; padding:28px 42px 30px; }
+.topbar, footer { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); padding-bottom:22px; font:500 12px "DM Mono", monospace; letter-spacing:.05em; color:var(--muted); text-transform:uppercase; }
+.brand { display:flex; gap:10px; align-items:center; color:var(--ink); text-decoration:none; font:600 15px "Space Grotesk", sans-serif; letter-spacing:0; text-transform:none; }
+.brand-mark { display:grid; place-items:center; width:31px; height:31px; background:var(--orange); color:#151311; font:500 11px "DM Mono", monospace; }
+.status { display:flex; gap:8px; align-items:center; }
+.status i { width:7px; height:7px; border-radius:50%; background:var(--green); box-shadow:0 0 10px var(--green); }
+.intro { max-width:760px; padding:104px 0 112px; }
+.eyebrow { margin:0 0 16px; color:var(--orange); font:500 11px "DM Mono", monospace; letter-spacing:.12em; }
+h1 { margin:0; font-size:clamp(4rem,9vw,8.5rem); line-height:.88; letter-spacing:-.075em; font-weight:600; }
+h1 em { color:var(--green); font-style:normal; }
+.lede { max-width:520px; margin:36px 0 0 7px; color:var(--muted); font-size:18px; line-height:1.5; }
+.section-heading { display:flex; justify-content:space-between; align-items:end; margin-bottom:22px; }
+h2 { margin:0; font-size:28px; letter-spacing:-.04em; }
+.count { color:var(--muted); font:12px "DM Mono", monospace; }
+.cards { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.card { min-height:310px; display:flex; flex-direction:column; padding:22px; background:var(--panel); border:1px solid var(--line); color:var(--ink); text-decoration:none; transition:transform .2s,border-color .2s,background .2s; }
+.card:hover { transform:translateY(-5px); border-color:var(--orange); background:#20241f; }
+.featured { background:var(--orange); color:#191612; border-color:var(--orange); }
+.featured:hover { background:#ff8059; }
+.card-top { display:flex; justify-content:space-between; align-items:center; font:12px "DM Mono", monospace; }
+.number { opacity:.65; }
+.tag { color:var(--muted); text-transform:uppercase; font-size:10px; letter-spacing:.08em; }
+.featured .tag { color:#3c261c; }
+.tag.live:before { content:""; display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--green); margin-right:6px; }
+.card h3 { margin:48px 0 14px; font-size:25px; line-height:1; letter-spacing:-.05em; }
+.card p { margin:0; color:var(--muted); line-height:1.45; font-size:14px; }
+.featured p { color:#553326; }
+.card-link { margin-top:auto; padding-top:28px; font:11px "DM Mono", monospace; text-transform:uppercase; letter-spacing:.06em; }
+.card-link b { float:right; font-size:18px; font-weight:400; line-height:10px; }
+.plus { color:var(--orange); font-size:34px; line-height:1; }
+.add-card h3 { margin-top:65px; }
+.footer-note { display:flex; gap:52px; align-items:baseline; max-width:720px; padding:110px 0 115px; }
+.footer-note p { margin:0; font-size:24px; line-height:1.2; letter-spacing:-.04em; }
+footer { border-top:1px solid var(--line); border-bottom:0; padding:22px 0 0; font-size:10px; }
+@media (max-width:850px) { .shell { padding:22px 20px; } .intro { padding:80px 0 82px; } .cards { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px) { .status { display:none; } h1 { font-size:4.2rem; } .lede { margin-left:0; font-size:16px; } .cards { grid-template-columns:1fr; } .card { min-height:250px; } .footer-note { display:block; padding:80px 0; } .footer-note .eyebrow { margin-bottom:22px; } .footer-note p { font-size:22px; } footer { display:block; line-height:2; } footer span { display:block; } }
